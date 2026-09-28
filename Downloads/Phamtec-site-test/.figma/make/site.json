@@ -1,0 +1,10 @@
+{
+  "description": "Enables seamless editing and management of GitHub repositories directly through an integrated web interface, streamlining code updates for developers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
