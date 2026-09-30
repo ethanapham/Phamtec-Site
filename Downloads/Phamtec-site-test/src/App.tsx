@@ -244,10 +244,10 @@ function MainPage() {
           borderBottom: scrolled ? `1px solid ${C.border}` : 'none',
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+        <div className="px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#">
-            <img src={logoSrc} alt="Phamtec" className="h-8" style={{ objectFit: 'contain', mixBlendMode: 'multiply' }} />
+          <a href="#" className="mt-2">
+            <img src={logoSrc} alt="Phamtec" className="h-16" style={{ objectFit: 'contain', mixBlendMode: 'multiply' }} />
           </a>
 
           {/* Desktop nav — all right-aligned */}
@@ -301,7 +301,7 @@ function MainPage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(248,244,238,0.97) 38%, rgba(248,244,238,0.80) 62%, rgba(248,244,238,0.28) 100%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(248,244,238,0.88) 0%, transparent 35%)' }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20">
+        <div className="relative z-10 px-6 pt-28 pb-20">
           <h1 className="font-semibold leading-[1.1] mb-6" style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', letterSpacing: '-0.025em', color: C.ink }}>
             Machining<br />
             <span style={{ color: C.green }}>for Your</span><br />
