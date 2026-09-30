@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import logoSrc from './assets/phamtec-logo.png';
+import heroVideo from './assets/hero-video.mp4';
 
 const C = {
   cream: '#F8F4EE',
@@ -15,8 +16,6 @@ const C = {
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
-  { label: 'Why Phamtec', href: '#why' },
-  { label: 'Industries', href: '#industries' },
 ];
 
 const SERVICES = [
@@ -143,56 +142,59 @@ function FullBleedImage({ src, alt, children }: { src: string; alt: string; chil
 function AboutPage() {
   return (
     <div className="min-h-screen" style={{ background: C.cream, fontFamily: "'DM Sans', sans-serif", color: C.ink }}>
-      <div className="max-w-5xl mx-auto px-6 py-20">
-        <img src={logoSrc} alt="Phamtec" className="h-12 mb-16" style={{ objectFit: 'contain', objectPosition: 'left', mixBlendMode: 'multiply' }} />
+      {/* Slim nav */}
+      <div className="px-8 py-5 border-b" style={{ borderColor: C.border, background: C.cream }}>
+        <img src={logoSrc} alt="Phamtec" className="h-10" style={{ objectFit: 'contain', objectPosition: 'left', mixBlendMode: 'multiply' }} />
+      </div>
 
+      {/* Intro + How We Work */}
+      <div className="max-w-5xl mx-auto px-8 py-20">
         <p className="text-xs font-medium uppercase mb-4" style={{ color: C.green, letterSpacing: '0.14em' }}>Our Story</p>
         <h1 className="font-semibold leading-tight mb-8" style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', letterSpacing: '-0.025em', color: C.ink }}>
           Built on Precision,<br />Driven by Purpose
         </h1>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div>
-            <p className="text-sm leading-relaxed mb-5" style={{ color: C.inkMid }}>
-              Phamtec was founded with a single conviction: that small and mid-size manufacturers deserve the same quality and responsiveness that enterprise suppliers receive. For over 20 years, we've been the trusted fabrication partner for companies across Silicon Valley and beyond.
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: C.inkMid }}>
-              Our shop in Milpitas houses CNC machining centers, welding equipment, and laser engraving systems — managed by a team that takes pride in every part that leaves our floor.
-            </p>
-          </div>
-          <div className="rounded-sm overflow-hidden aspect-[4/3]" style={{ background: C.creamCard }}>
-            <img
-              src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop&auto=format"
-              alt="Phamtec shop"
-              className="w-full h-full object-cover"
-              style={{ opacity: 0.88 }}
-            />
-          </div>
+          <p className="text-sm leading-relaxed" style={{ color: C.inkMid }}>
+            Phamtec was founded with a single conviction: that small and mid-size manufacturers deserve the same quality and responsiveness that enterprise suppliers receive. For over 20 years, we've been the trusted fabrication partner for companies across Silicon Valley and beyond.
+          </p>
+          <p className="text-sm leading-relaxed" style={{ color: C.inkMid }}>
+            Our shop in Milpitas houses CNC machining centers, welding equipment, and laser engraving systems — managed by a team that takes pride in every part that leaves our floor.
+          </p>
         </div>
 
-        <div className="border-t pt-12" style={{ borderColor: C.border }}>
-          <p className="text-xs font-medium uppercase mb-6" style={{ color: C.green, letterSpacing: '0.14em' }}>How We Work</p>
-          <div className="flex flex-col gap-5 max-w-lg">
-            {[
-              { step: '01', label: 'Send us your drawings or specs' },
-              { step: '02', label: 'Receive a detailed quote within 24–48 hours' },
-              { step: '03', label: 'We fabricate, inspect, and deliver' },
-            ].map(item => (
-              <div key={item.step} className="flex items-center gap-5">
-                <span className="flex-shrink-0 font-medium text-sm tabular-nums" style={{ color: C.inkLight }}>{item.step}</span>
-                <div className="flex-1 h-px" style={{ background: C.border }} />
-                <span className="text-sm" style={{ color: C.ink }}>{item.label}</span>
-              </div>
-            ))}
-          </div>
+        {/* How We Work — directly under the text */}
+        <p className="text-xs font-medium uppercase mb-8" style={{ color: C.green, letterSpacing: '0.14em' }}>How We Work</p>
+        <div className="flex flex-col gap-6 max-w-xl mb-4">
+          {[
+            { step: '01', label: 'Send us your drawings or specs' },
+            { step: '02', label: 'Receive a detailed quote within 24–48 hours' },
+            { step: '03', label: 'We fabricate, inspect, and deliver' },
+          ].map(item => (
+            <div key={item.step} className="flex items-center gap-6">
+              <span className="flex-shrink-0 font-semibold text-lg tabular-nums" style={{ color: C.inkLight, width: '2rem' }}>{item.step}</span>
+              <div className="flex-1 h-px" style={{ background: C.border }} />
+              <span className="text-sm font-medium" style={{ color: C.ink }}>{item.label}</span>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div className="border-t mt-16 pt-10 flex flex-col gap-4" style={{ borderColor: C.border }}>
-          <p className="text-xs font-medium uppercase" style={{ color: C.inkLight, letterSpacing: '0.12em' }}>Get in Touch</p>
-          <p className="text-sm" style={{ color: C.inkMid }}>1011 Pecten Ct., Milpitas, CA 95035</p>
-          <a href="mailto:cs@phamtecinc.com" className="text-sm" style={{ color: C.green }}>cs@phamtecinc.com</a>
-          <a href="tel:+14082104606" className="text-sm" style={{ color: C.inkMid }}>+1 (408) 210-4606</a>
-        </div>
+      {/* Full-bleed shop photo */}
+      <div className="relative h-[55vh] min-h-[360px] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&h=900&fit=crop&auto=format"
+          alt="Phamtec shop"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{ background: 'rgba(32,28,21,0.35)' }} />
+      </div>
+
+      {/* Contact footer */}
+      <div className="max-w-5xl mx-auto px-8 py-16 border-t mt-0" style={{ borderColor: C.border }}>
+        <p className="text-xs font-medium uppercase mb-5" style={{ color: C.inkLight, letterSpacing: '0.12em' }}>Get in Touch</p>
+        <p className="text-sm mb-1" style={{ color: C.inkMid }}>1011 Pecten Ct., Milpitas, CA 95035</p>
+        <a href="mailto:cs@phamtecinc.com" className="text-sm" style={{ color: C.green }}>cs@phamtecinc.com</a>
       </div>
     </div>
   );
@@ -230,21 +232,21 @@ function MainPage() {
   };
 
   const service = SERVICES[activeService];
-  const inputStyle = { background: C.cream, borderColor: C.border, color: C.ink };
+  const inputStyle = { background: C.cream, borderColor: C.border, color: '#FFFFFF' };
 
   return (
-    <div className="min-h-screen overflow-x-hidden" style={{ background: C.cream, fontFamily: "'DM Sans', sans-serif", color: C.ink }}>
+    <div className="min-h-screen overflow-x-hidden" style={{ background: C.cream, fontFamily: "'DM Sans', sans-serif", color: '#FFFFFF' }}>
 
       {/* NAV — logo left, all links right */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-50 transition-background duration-300"
         style={{
           background: scrolled ? 'rgba(248,244,238,0.92)' : 'transparent',
           backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          borderBottom: scrolled ? `1px solid ${C.border}` : 'none',
+          borderBottom: scrolled ? `1.5px solid ${C.border}` : '1.5px solid transparent',
         }}
       >
-        <div className="px-6 flex items-center justify-between h-16">
+        <div className="px-6 flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="mt-2">
             <img src={logoSrc} alt="Phamtec" className="h-16" style={{ objectFit: 'contain', mixBlendMode: 'multiply' }} />
@@ -253,9 +255,9 @@ function MainPage() {
           {/* Desktop nav — all right-aligned */}
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map(l => (
-              <a key={l.label} href={l.href} className="text-sm transition-colors duration-150" style={{ color: C.inkMid }}
-                onMouseEnter={e => (e.currentTarget.style.color = C.ink)}
-                onMouseLeave={e => (e.currentTarget.style.color = C.inkMid)}
+              <a key={l.label} href={l.href} className="text-sm transition-colors duration-150" style={{ color: '#FFFFFF' }}
+                onMouseEnter={e => (e.currentTarget.style.color = C.green)}
+                onMouseLeave={e => (e.currentTarget.style.color = '#FFFFFF')}
               >{l.label}</a>
             ))}
             <a
@@ -263,16 +265,16 @@ function MainPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm transition-colors duration-150"
-              style={{ color: C.inkMid }}
-              onMouseEnter={e => (e.currentTarget.style.color = C.ink)}
-              onMouseLeave={e => (e.currentTarget.style.color = C.inkMid)}
-            >About</a>
+              style={{ color: '#FFFFFF' }}
+              onMouseEnter={e => (e.currentTarget.style.color = C.green)}
+              onMouseLeave={e => (e.currentTarget.style.color = '#FFFFFF')}
+            >About Us</a>
             <a
               href="#contact"
               className="text-sm transition-colors duration-150"
-              style={{ color: C.inkMid }}
-              onMouseEnter={e => (e.currentTarget.style.color = C.ink)}
-              onMouseLeave={e => (e.currentTarget.style.color = C.inkMid)}
+              style={{ color: "#FFFFFF" }}
+              onMouseEnter={e => (e.currentTarget.style.color = C.green)}
+              onMouseLeave={e => (e.currentTarget.style.color = '#FFFFFF')}
             >Contact Us</a>
           </div>
 
@@ -297,18 +299,30 @@ function MainPage() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1740209475472-aa7d280f7452?w=1600&h=900&fit=crop&auto=format')" }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(248,244,238,0.97) 38%, rgba(248,244,238,0.80) 62%, rgba(248,244,238,0.28) 100%)' }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(248,244,238,0.88) 0%, transparent 35%)' }} />
+        {/* Loop Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
 
+        {/* Faded Gradient Overlays (Keep these on top of the video) */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(248,244,238,0.90) 38%, rgba(248,244,238,0.65) 62%, rgba(248,244,238,0.15) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(248,244,238,0.70) 0%, transparent 35%)' }} />
+
+        {/* Content */}
         <div className="relative z-10 px-6 pt-28 pb-20">
-          <h1 className="font-semibold leading-[1.1] mb-6" style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', letterSpacing: '-0.025em', color: C.ink }}>
+          <h1 className="font-semibold leading-[1.05] mb-8" style={{ fontSize: 'clamp(3.2rem, 7vw, 5.6rem)', letterSpacing: '-0.03em', color: C.ink }}>
             Machining<br />
-            <span style={{ color: C.green }}>for Your</span><br />
-            Needs
+            <span style={{ color: C.green }}>For Your</span><br />
+          Needs
           </h1>
 
-          <p className="text-base leading-relaxed max-w-md mb-10" style={{ color: C.inkMid }}>
+          <p className="text-lg leading-relaxed max-w-lg mb-12" style={{ color: C.inkMid }}>
             Experienced &amp; Reliable CNC Machining, Laser Engraving, Tube Welding, and more from our small team in Silicon Valley.
           </p>
 
@@ -325,13 +339,10 @@ function MainPage() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-24 px-6" style={{ background: C.cream }}>
+      <section id="services" className="pt-12 pb-24 px-6" style={{ background: C.cream }}>
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <p className="text-xs font-medium uppercase mb-3" style={{ color: C.green, letterSpacing: '0.14em' }}>What We Do</p>
-            <h2 className="font-semibold leading-tight" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', letterSpacing: '-0.02em', color: C.ink }}>
-              Full-Spectrum<br />Fabrication Services
-            </h2>
+          <div className="mb-10">
+            <p className="text-sm font-medium uppercase" style={{ color: C.green, letterSpacing: '0.14em' }}>What We Do</p>
           </div>
 
           <div className="flex flex-wrap border-b mb-10" style={{ borderColor: C.border }}>
@@ -410,7 +421,7 @@ function MainPage() {
               </h2>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: C.inkMid }}>
-              We're a family-owned shop in Silicon Valley that has been serving engineers, startups, and defense contractors for over two decades. When you work with Phamtec, you get direct access to the people doing the work.
+              We're a family-owned shop in Silicon Valley that has been serving engineers, startups, and defense contractors for more than two decades. We are dedicated to serving you properly through strong communication with our employees.
             </p>
           </div>
 
@@ -443,32 +454,6 @@ function MainPage() {
           Built in Silicon Valley
         </p>
       </FullBleedImage>
-
-      {/* INDUSTRIES */}
-      <section id="industries" className="py-24 px-6" style={{ background: C.cream }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <p className="text-xs font-medium uppercase mb-3" style={{ color: C.inkMid, letterSpacing: '0.14em' }}>Who We Serve</p>
-            <h2 className="font-semibold leading-tight" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', letterSpacing: '-0.02em', color: C.ink }}>
-              Industries We<br />Support
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {INDUSTRIES.map(ind => (
-              <div
-                key={ind.name}
-                className="flex flex-col items-center justify-center gap-3 p-5 rounded-sm border transition-all duration-200 cursor-default"
-                style={{ borderColor: C.border, background: C.creamCard }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(77,105,64,0.28)'; (e.currentTarget as HTMLElement).style.background = C.creamDeep; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = C.border; (e.currentTarget as HTMLElement).style.background = C.creamCard; }}
-              >
-                <span className="text-2xl" style={{ opacity: 0.65 }}>{ind.icon}</span>
-                <span className="text-xs text-center font-medium leading-tight" style={{ color: C.inkMid }}>{ind.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA BAND */}
       <section className="py-20 px-6" style={{ background: C.green }}>
@@ -512,10 +497,6 @@ function MainPage() {
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />,
                   label: 'Email', value: 'cs@phamtecinc.com', href: 'mailto:cs@phamtecinc.com',
-                },
-                {
-                  icon: <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />,
-                  label: 'Phone', value: '+1 (408) 210-4606', href: 'tel:+14082104606',
                 },
               ].map(item => (
                 <div key={item.label} className="flex items-start gap-4">
@@ -668,7 +649,7 @@ function MainPage() {
           <div>
             <h4 className="text-xs font-medium uppercase mb-4" style={{ color: C.inkLight, letterSpacing: '0.12em' }}>Company</h4>
             <ul className="flex flex-col gap-2.5 mb-8">
-              {['Industries', 'Contact', 'Request a Quote'].map(l => (
+              {['Contact', 'Request a Quote'].map(l => (
                 <li key={l}>
                   <a href="#contact" className="text-sm transition-colors" style={{ color: C.inkMid }}
                     onMouseEnter={e => (e.currentTarget.style.color = C.ink)}
@@ -689,10 +670,6 @@ function MainPage() {
               onMouseEnter={e => (e.currentTarget.style.color = C.greenHover)}
               onMouseLeave={e => (e.currentTarget.style.color = C.green)}
             >cs@phamtecinc.com</a>
-            <a href="tel:+14082104606" className="text-sm mt-1 block transition-colors" style={{ color: C.inkMid }}
-              onMouseEnter={e => (e.currentTarget.style.color = C.ink)}
-              onMouseLeave={e => (e.currentTarget.style.color = C.inkMid)}
-            >+1 (408) 210-4606</a>
           </div>
         </div>
 
