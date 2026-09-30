@@ -22,18 +22,18 @@ const SERVICES = [
   {
     id: 'cnc',
     label: 'CNC Machining',
-    headline: 'Precision CNC Machining for Complex Parts',
+    headline: 'CNC Machining for Complex Parts',
     description:
-      'From prototypes to production runs, our CNC machining capabilities deliver tight-tolerance components in aluminum, steel, titanium, and more. We hold ±0.001" tolerances across 3-, 4-, and 5-axis configurations.',
-    features: ['3-, 4-, and 5-axis milling', 'Turning & Swiss-type turning', 'Materials: Al, Ti, SS, brass', 'Tolerances to ±0.001"'],
+      'From prototypes to production, we deliver tight tolerance parts in aluminum, steel, titanium, and more. We hold ±0.001" tolerances across 3, 4, and 5-axis configurations.',
+    features: ['3, 4, and 5-axis milling', 'Turning & Swiss-type turning', 'Materials: Al, Ti, SS, brass', 'Tolerances to ±0.001"'],
     image: 'https://images.unsplash.com/photo-1666634157070-6fd830fb5672?w=800&h=560&fit=crop&auto=format',
   },
   {
     id: 'extrusion',
-    label: 'Extrusion Cutting',
-    headline: 'Structural Extrusion Cutting & Assembly',
+    label: 'Extrusion Cutting + Assembly',
+    headline: 'Extrusion Cutting & Assembly',
     description:
-      'We cut and assemble 8020 and Bosch Rexroth T-slot profiles to your exact specifications. Ideal for machine frames, workstations, carts, and enclosures — delivered ready to integrate.',
+      'We cut and assemble 8020 and Bosch Rexroth T-slot profiles catered to your needs and specifications. Ideal for machine frames, workstations, carts, and enclosures.',
     features: ['8020 & Bosch Rexroth systems', 'Custom cut lengths', 'Full sub-assembly', 'Hardware kitting included'],
     image: 'https://images.unsplash.com/photo-1713371398485-7bde1bde9def?w=800&h=560&fit=crop&auto=format',
   },
@@ -42,26 +42,26 @@ const SERVICES = [
     label: 'Tube Frame Welding',
     headline: 'Tube Frame & Structural Welding',
     description:
-      'Our certified welders fabricate tube frames, brackets, and structural weldments to your drawings. MIG, TIG, and spot welding across steel, aluminum, and stainless steel.',
+      'Our certified welders produce tube frames, brackets, and weldments according to your drawings. MIG, TIG, and spot welding across steel, aluminum, and stainless steel.',
     features: ['MIG, TIG & spot welding', 'Steel, Al & stainless', 'Certified welders', 'Drawing-based or design-assist'],
     image: 'https://images.unsplash.com/photo-1598302936625-6075fbd98dd7?w=800&h=560&fit=crop&auto=format',
   },
   {
     id: 'laser',
     label: 'Laser Engraving',
-    headline: 'High-Definition Laser Engraving',
+    headline: 'Laser Engraving',
     description:
-      'Permanent marking for branding, part identification, serial numbers, and compliance labels. We engrave metals, plastics, anodized surfaces, and more with sub-millimeter precision.',
+      'Permanent marking for branding, part IDs, serial numbers, and compliance labels. We engrave metals, plastics, anodized surfaces, and more.',
     features: ['Metals, plastics, anodized', 'Serial & batch marking', 'Logo & artwork engraving', 'Compliance labeling'],
     image: 'https://images.unsplash.com/photo-1738162837438-92ff852619a1?w=800&h=560&fit=crop&auto=format',
   },
   {
     id: 'sheetmetal',
     label: 'Sheet Metal',
-    headline: 'Sheet Metal Fabrication & Outsourcing',
+    headline: 'Sheet Metal Fabrication',
     description:
-      'We coordinate precision sheet metal fabrication through vetted partners — laser cutting, bending, punching, and finishing — so you get a single point of contact for complex sheet-metal assemblies.',
-    features: ['Laser cutting & punching', 'CNC bending & forming', 'Powder coat & anodize', 'Single-source coordination'],
+      'We coordinate precision sheet metal production through laser cutting, bending, punching, and finishing.',
+    features: ['Laser cutting & punching', 'CNC bending & forming', 'Powder coat & anodize'],
     image: 'https://images.unsplash.com/photo-1738162837451-2041c1418f54?w=800&h=560&fit=crop&auto=format',
   },
   {
@@ -69,8 +69,8 @@ const SERVICES = [
     label: 'Fixture Design',
     headline: 'Mechanical Fixture Design & Build',
     description:
-      'Custom tooling and fixture design for manufacturing, inspection, and testing applications. We take your functional requirements and deliver production-ready fixtures that reduce setup time and improve repeatability.',
-    features: ['Design-to-build capability', 'Machining & assembly jigs', 'Inspection fixtures', 'Rapid iteration'],
+      'We provide custom tooling and fixture design for manufacturing, inspection, and testing applications. We take your requirements and give fixtures that are production ready.',
+    features: ['Design-to-build capability', 'Machining & assembly jigs', 'Inspection fixtures'],
     image: 'https://images.unsplash.com/photo-1666618090858-fbcee636bd3e?w=800&h=560&fit=crop&auto=format',
   },
 ];
@@ -82,8 +82,8 @@ const WHY_ITEMS = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: 'Tight-Tolerance Expertise',
-    desc: 'We hold ±0.001" across CNC and fixture work. Our machinists are hands-on from setup to final inspection.',
+    title: 'We Assure Tight Tolerance',
+    desc: 'We hold ±0.001" across CNC and fixture work. Our machinists handle your work with gentle care from start to final inspection.',
   },
   {
     icon: (
@@ -91,8 +91,8 @@ const WHY_ITEMS = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: 'Fast Turnaround',
-    desc: 'From quote to delivery, we move fast. Rush projects are our specialty — without cutting corners on quality.',
+    title: 'Speed and Accuracy',
+    desc: 'We always ensure your product is worked on with speed. Rush projects are handled with ease, without cutting any corners on quality.',
   },
   {
     icon: (
@@ -100,8 +100,8 @@ const WHY_ITEMS = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
       </svg>
     ),
-    title: 'One-Stop Fabrication',
-    desc: 'CNC, welding, laser engraving, extrusion, and sheet metal under one roof. Fewer vendors, cleaner project flow.',
+    title: 'Everything Happens in One Place',
+    desc: 'All operations occur under one roof. Thus, we are great at ensuring smooth and efficient workflow.',
   },
   {
     icon: (
@@ -110,17 +110,8 @@ const WHY_ITEMS = [
       </svg>
     ),
     title: 'Dedicated Account Support',
-    desc: 'You work directly with our team — not a portal. Real people, real answers, real accountability.',
+    desc: 'You will work directly with our team, with real and experienced employees. We will always be quick to answer any questions you have',
   },
-];
-
-const INDUSTRIES = [
-  { name: 'Semiconductor', icon: '⬡' },
-  { name: 'Defense & Aerospace', icon: '✈' },
-  { name: 'Medical Devices', icon: '✚' },
-  { name: 'Robotics & Automation', icon: '⚙' },
-  { name: 'Energy', icon: '⚡' },
-  { name: 'Consumer Electronics', icon: '◻' },
 ];
 
 // Full-bleed image section component
@@ -168,8 +159,8 @@ function AboutPage() {
         <div className="flex flex-col gap-6 max-w-xl mb-4">
           {[
             { step: '01', label: 'Send us your drawings or specs' },
-            { step: '02', label: 'Receive a detailed quote within 24–48 hours' },
-            { step: '03', label: 'We fabricate, inspect, and deliver' },
+            { step: '02', label: 'Receive a quote within 24–48 hours' },
+            { step: '03', label: 'Working with us will get your product delivered with ease!' },
           ].map(item => (
             <div key={item.step} className="flex items-center gap-6">
               <span className="flex-shrink-0 font-semibold text-lg tabular-nums" style={{ color: C.inkLight, width: '2rem' }}>{item.step}</span>
@@ -246,35 +237,35 @@ function MainPage() {
           borderBottom: scrolled ? `1.5px solid ${C.border}` : '1.5px solid transparent',
         }}
       >
-        <div className="px-6 flex items-center justify-between h-20">
+        <div className="px-6 flex items-center justify-between h-32">
           {/* Logo */}
-          <a href="#" className="mt-2">
-            <img src={logoSrc} alt="Phamtec" className="h-16" style={{ objectFit: 'contain', mixBlendMode: 'multiply' }} />
+          <a href="#" className="flex items-center">
+            <img src={logoSrc} alt="Phamtec" className="h-28" style={{ objectFit: 'contain', mixBlendMode: 'multiply' }} />
           </a>
 
           {/* Desktop nav — all right-aligned */}
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map(l => (
-              <a key={l.label} href={l.href} className="text-sm transition-colors duration-150" style={{ color: '#FFFFFF' }}
+              <a key={l.label} href={l.href} className="text-base font-semibold transition-colors duration-150" style={{ color: scrolled ? C.ink : '#FFFFFF' }}
                 onMouseEnter={e => (e.currentTarget.style.color = C.green)}
-                onMouseLeave={e => (e.currentTarget.style.color = '#FFFFFF')}
+                onMouseLeave={e => (e.currentTarget.style.color = scrolled ? C.ink : '#FFFFFF')}
               >{l.label}</a>
             ))}
             <a
               href="?page=about"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm transition-colors duration-150"
-              style={{ color: '#FFFFFF' }}
+              className="text-base font-semibold transition-colors duration-150"
+              style={{ color: scrolled ? C.ink : '#FFFFFF' }}
               onMouseEnter={e => (e.currentTarget.style.color = C.green)}
-              onMouseLeave={e => (e.currentTarget.style.color = '#FFFFFF')}
+              onMouseLeave={e => (e.currentTarget.style.color = scrolled ? C.ink : '#FFFFFF')}
             >About Us</a>
             <a
               href="#contact"
-              className="text-sm transition-colors duration-150"
-              style={{ color: "#FFFFFF" }}
+              className="text-base font-semibold transition-colors duration-150"
+              style={{ color: scrolled ? C.ink : "#FFFFFF" }}
               onMouseEnter={e => (e.currentTarget.style.color = C.green)}
-              onMouseLeave={e => (e.currentTarget.style.color = '#FFFFFF')}
+              onMouseLeave={e => (e.currentTarget.style.color = scrolled ? C.ink : '#FFFFFF')}
             >Contact Us</a>
           </div>
 
@@ -315,7 +306,7 @@ function MainPage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(248,244,238,0.70) 0%, transparent 35%)' }} />
 
         {/* Content */}
-        <div className="relative z-10 px-6 pt-28 pb-20">
+        <div className="relative z-10 px-6 pt-36 pb-20">
           <h1 className="font-semibold leading-[1.05] mb-8" style={{ fontSize: 'clamp(3.2rem, 7vw, 5.6rem)', letterSpacing: '-0.03em', color: C.ink }}>
             Machining<br />
             <span style={{ color: C.green }}>For Your</span><br />
